@@ -21,6 +21,7 @@
     <title>Interior Consultant</title>
   </head>
   <body>
+    <div class="nav-mobile__background">&nbsp;</div>
     <div class="wrapper">
       <header class="header">
         <div class="header__logo">This interior</div>
@@ -30,7 +31,19 @@
           <a href="#" class="navigation__link">About</a>
           <a href="#" class="navigation__link">Contact</a>
         </nav>
+        <input type="checkbox" class="header__checkbox" id="navi-toggle">
+        <label for="navi-toggle" class="header__button">Menu</label>
       </header>
+      <div class="nav-mobile">
+        <nav class="nav-mobile__nav">
+          <ul class="nav-mobile__list">
+            <li class="nav-mobile__item"><a href="#" class="nav-mobile__link nav-mobile__link--active">Home</a></li>
+            <li class="nav-mobile__item"><a href="#" class="nav-mobile__link">Collection</a></li>
+            <li class="nav-mobile__item"><a href="#" class="nav-mobile__link">About</a></li>
+            <li class="nav-mobile__item"><a href="#" class="nav-mobile__link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
       <div class="container">
         <div class="info">
           <h1 class="heading-1 u-mb-medium">Modern interior</h1>

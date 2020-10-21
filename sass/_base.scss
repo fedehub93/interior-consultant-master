@@ -2,6 +2,8 @@
 
 :root {
     --color-black: #181719;
+    --color-gray: #828282;
+    --color-gray-2: #a9a9a9;
     --color-white: #fff;
 }
 
@@ -20,6 +22,4 @@ html {
 
 body {
     background-color: var(--color-black);
-    //test
-    height: 100vh;
 }

@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Lora:wght@400;700&family=Montserrat:wght@300;500;600;700&display=swap");
 :root {
   --color-black: #181719;
+  --color-gray: #828282;
+  --color-gray-2: #a9a9a9;
   --color-white: #fff; }
 
 *,
@@ -15,8 +17,37 @@ html {
   box-sizing: border-box; }
 
 body {
-  background-color: var(--color-black);
-  height: 100vh; }
+  background-color: var(--color-black); }
+
+.heading-1 {
+  font-family: "Lora", sans-serif;
+  font-weight: 400;
+  font-size: 4.8rem;
+  color: var(--color-white); }
+
+.heading-2 {
+  font-family: "Lora", sans-serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--color-white); }
+
+.heading-3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: var(--color-white); }
+
+.u-mb-small {
+  margin-bottom: 2rem; }
+
+.u-mb-medium {
+  margin-bottom: 4rem; }
+
+.u-mb-large {
+  margin-bottom: 5rem; }
+
+.u-mb-huge {
+  margin-bottom: 8rem; }
 
 .wrapper {
   padding: 5rem 10rem; }
@@ -48,3 +79,57 @@ body {
       margin-right: 10rem; }
     .navigation__link--active {
       font-weight: 700; }
+
+.container {
+  margin-top: 17.5rem;
+  display: grid;
+  grid-template-columns: 40% 1fr; }
+
+.info {
+  padding-right: 6rem; }
+  .info__paragraph {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 2.4rem;
+    color: var(--color-white); }
+
+.interior {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); }
+  .interior__box {
+    grid-column: 6 / 12;
+    transform: translateY(-50%);
+    background-color: var(--color-black);
+    padding: 2rem 4rem;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    align-items: center;
+    gap: 2rem; }
+  .interior__box-role {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--color-gray); }
+  .interior__box-description {
+    grid-column: 1 / -1; }
+  .interior__img {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto; }
+  .interior__img-2 {
+    width: 5rem;
+    border-radius: 50%; }
+
+.footer {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--color-gray-2); }
+
+.btn {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--color-white);
+  text-decoration: none; }

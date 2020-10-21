@@ -1,0 +1,42 @@
+.wrapper {
+  padding: 5rem 10rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    font-family: "Crimson Pro", sans-serif;
+    font-weight: 200;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: var(--color-white);
+
+    padding: 0.75rem 0.75rem;
+    border: 1px solid currentColor;
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__link {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--color-white);
+    text-decoration: none;
+
+    &:not(:last-child) {
+      margin-right: 10rem;
+    }
+
+    &--active {
+      font-weight: 700;
+    }
+  }
+}

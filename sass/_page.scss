@@ -16,6 +16,7 @@
 
     padding: 0.75rem 0.75rem;
     border: 1px solid currentColor;
+    position: relative;
   }
 
   &__checkbox {
@@ -23,15 +24,39 @@
   }
 
   &__button {
+    display: none;
     position: absolute;
     right: 10rem;
+    z-index: 200;
+    //test
+    font-size: 2rem;
+    color: #fff;
+    @media only screen and (max-width: $media-screen-medium) {
+      display: block;
+    }
   }
+}
+
+.header__checkbox:checked + .header__button {
+  position: fixed;
+}
+
+.header__checkbox:checked ~ .nav-mobile .nav-mobile__background {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.header__checkbox:checked ~ .nav-mobile .nav-mobile__nav {
+  opacity: 1;
 }
 
 .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: $media-screen-medium) {
+    display: none;
+  }
 
   &__link {
     font-family: "Montserrat", sans-serif;
@@ -42,8 +67,12 @@
 
     &:not(:last-child) {
       margin-right: 10rem;
-    }
 
+      @media only screen and (max-width: $media-screen-large) {
+        margin-right: 5rem;
+      }
+    }
+    
     &--active {
       font-weight: 700;
     }
@@ -52,23 +81,30 @@
 
 .nav-mobile {
   //display: none;
-
+  
   &__background {
-    display: none;
     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) scale(0);
     height: 100vh;
     width: 100vw;
     background-color: var(--color-black);
     z-index: 100;
+
+    transition: all .2s;
   }
 
   &__nav {
-    display: none;
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 200;
+    opacity: 0;
+
+    transition: opacity .2s;
   }
 
   &__list {
@@ -100,6 +136,12 @@
 
   display: grid;
   grid-template-columns: 40% 1fr;
+  row-gap: 5rem;
+  
+  @media only screen and (max-width: $media-screen-large) {
+    margin-top: 12.5rem;
+    margin-bottom: 5rem;
+  }
 }
 
 .info {
@@ -110,14 +152,23 @@
     font-size: 2.4rem;
     color: var(--color-white);
   }
+
+  @media only screen and (max-width: $media-screen-large) {
+    grid-column: 1 / -1;
+    padding-right: 0;
+  }
 }
 
 .interior {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(14, 1fr);
+
+  @media only screen and (max-width: $media-screen-large) {
+    grid-column: 1 / -1;
+  }
   
   &__box {
-    grid-column: 6 / 12;
+    grid-column: 6 / 14;
     transform: translateY(-50%);
 
     background-color: var(--color-black);

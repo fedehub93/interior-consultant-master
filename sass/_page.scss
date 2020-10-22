@@ -4,7 +4,6 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
   &__logo {
@@ -13,6 +12,7 @@
     font-size: 1.4rem;
     text-transform: uppercase;
     color: var(--color-white);
+    margin-right: auto;
 
     padding: 0.75rem 0.75rem;
     border: 1px solid currentColor;
@@ -27,12 +27,50 @@
     display: none;
     position: absolute;
     right: 10rem;
+    height: 4rem;
+    width: 4rem;
+    background-color:var(--color-black);
+    cursor: pointer;
+
     z-index: 200;
-    //test
-    font-size: 2rem;
-    color: #fff;
+
     @media only screen and (max-width: $media-screen-medium) {
       display: block;
+    }
+
+  }
+
+  &__button-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    width: 4rem;
+    background-color: var(--color-white);
+    z-index: 199;
+
+    transition: all .2s;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      height: 2px;
+      width: 4rem;
+      background-color: var(--color-white);
+    }
+
+    &::before {
+      transform: translateY(-1rem);
+      transition: all .4s;
+    }
+
+    &::after {
+      transform: translateY(1rem);
+      transition: all .4s;
     }
   }
 }
@@ -41,8 +79,20 @@
   position: fixed;
 }
 
+.header__checkbox:checked + .header__button .header__button-icon {
+  background-color: transparent;
+}
+
+.header__checkbox:checked + .header__button .header__button-icon::before {
+  transform: rotate(130deg);
+}
+
+.header__checkbox:checked + .header__button .header__button-icon::after {
+  transform: rotate(230deg);
+}
+
 .header__checkbox:checked ~ .nav-mobile .nav-mobile__background {
-  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
 }
 
 .header__checkbox:checked ~ .nav-mobile .nav-mobile__nav {
@@ -84,16 +134,15 @@
   
   &__background {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform-origin: center;
-    transform: translate(-50%, -50%) scale(0);
     height: 100vh;
     width: 100vw;
+    left: 0;
+    top: 0;
     background-color: var(--color-black);
+    opacity: 0;
     z-index: 100;
 
-    transition: all .2s;
+    transition: all .2s cubic-bezier(0,1.08,.78,.88);
   }
 
   &__nav {

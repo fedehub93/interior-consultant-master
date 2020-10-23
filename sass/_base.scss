@@ -18,9 +18,26 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+
+    @media only screen and (max-width: $media-screen-small) {
+        font-size: 53%;
+    }
+
+    @media only screen and (max-width: $media-screen-xsmall) {
+        font-size: 50%;
+    }
+
 }
 
 body {
     padding: 5rem 10rem;
     background-color: var(--color-black);
+
+    @media only screen and (max-width: $media-screen-medium) {
+        padding: 2.5rem 5rem;
+    }
+
+    @media only screen and (max-width: $media-screen-xsmall) {
+        padding: 2.5rem 3rem;
+    }
 }

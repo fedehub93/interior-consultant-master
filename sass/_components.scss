@@ -1,8 +1,19 @@
-.btn {
+.btn:link,
+.btn:visited {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-size: 1.8rem;
     color: var(--color-white);
-
     text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+    transition: margin-left .3s, border-bottom .2s;
+
+    span { transition: all .3s; }
 }
+
+.btn:hover { 
+    margin-left: -2px; 
+    border-bottom: 2px solid currentColor; 
+}
+.btn:hover span { margin-left: .5rem;}

@@ -62,10 +62,31 @@ body {
 .u-mb-huge {
   margin-bottom: 8rem; }
 
-.header {
+.btn:link,
+.btn:visited {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--color-white);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: margin-left .3s, border-bottom .2s; }
+  .btn:link span,
+  .btn:visited span {
+    transition: all .3s; }
+
+.btn:hover {
+  margin-left: -2px;
+  border-bottom: 2px solid currentColor; }
+
+.btn:hover span {
+  margin-left: .5rem; }
+
+.nav {
   display: flex;
   align-items: center; }
-  .header__logo {
+  .nav__logo {
     font-family: "Crimson Pro", sans-serif;
     font-weight: 200;
     font-size: 1.4rem;
@@ -75,9 +96,9 @@ body {
     padding: 0.75rem 0.75rem;
     border: 1px solid currentColor;
     position: relative; }
-  .header__checkbox {
+  .nav__checkbox {
     display: none; }
-  .header__button {
+  .nav__button {
     display: none;
     position: absolute;
     right: 5rem;
@@ -87,9 +108,9 @@ body {
     cursor: pointer;
     z-index: 200; }
     @media only screen and (max-width: 56.25em) {
-      .header__button {
+      .nav__button {
         display: block; } }
-  .header__button-icon {
+  .nav__button-icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -99,7 +120,7 @@ body {
     background-color: var(--color-white);
     z-index: 199;
     transition: all .2s; }
-    .header__button-icon::before, .header__button-icon::after {
+    .nav__button-icon::before, .nav__button-icon::after {
       content: "";
       display: block;
       position: absolute;
@@ -107,30 +128,30 @@ body {
       height: 2px;
       width: 4rem;
       background-color: var(--color-white); }
-    .header__button-icon::before {
+    .nav__button-icon::before {
       transform: translateY(-1rem);
       transition: all .4s; }
-    .header__button-icon::after {
+    .nav__button-icon::after {
       transform: translateY(1rem);
       transition: all .4s; }
 
-.header__checkbox:checked + .header__button {
+.nav__checkbox:checked + .nav__button {
   position: fixed; }
 
-.header__checkbox:checked + .header__button .header__button-icon {
+.nav__checkbox:checked + .nav__button .nav__button-icon {
   background-color: transparent; }
 
-.header__checkbox:checked + .header__button .header__button-icon::before {
+.nav__checkbox:checked + .nav__button .nav__button-icon::before {
   transform: rotate(130deg); }
 
-.header__checkbox:checked + .header__button .header__button-icon::after {
+.nav__checkbox:checked + .nav__button .nav__button-icon::after {
   transform: rotate(230deg); }
 
-.header__checkbox:checked ~ .nav-mobile .nav-mobile__background {
+.nav__checkbox:checked ~ .nav-mobile .nav-mobile__background {
   width: 100vw;
   opacity: 1; }
 
-.header__checkbox:checked ~ .nav-mobile .nav-mobile__nav {
+.nav__checkbox:checked ~ .nav-mobile .nav-mobile__nav {
   opacity: 1; }
 
 .navigation {
@@ -145,12 +166,15 @@ body {
     font-weight: 500;
     font-size: 1.8rem;
     color: var(--color-white);
-    text-decoration: none; }
+    text-decoration: none;
+    transition: color .2s; }
     .navigation__link:not(:last-child) {
       margin-right: 10rem; }
       @media only screen and (max-width: 75em) {
         .navigation__link:not(:last-child) {
           margin-right: 5rem; } }
+    .navigation__link:hover {
+      color: var(--color-gray-2); }
     .navigation__link--active {
       font-weight: 700; }
 
@@ -251,10 +275,3 @@ body {
   font-weight: 600;
   font-size: 1.4rem;
   color: var(--color-gray-2); }
-
-.btn {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 1.8rem;
-  color: var(--color-white);
-  text-decoration: none; }

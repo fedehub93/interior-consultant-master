@@ -141,6 +141,9 @@ body {
 .nav__checkbox:checked + .nav__button .nav__button-icon {
   background-color: transparent; }
 
+.nav__checkbox:checked ~ .nav-mobile .nav-mobile__nav {
+  left: 50%; }
+
 .nav__checkbox:checked + .nav__button .nav__button-icon::before {
   transform: rotate(130deg); }
 
@@ -191,24 +194,24 @@ body {
 
 .nav-mobile__nav {
   position: fixed;
-  left: 50%;
+  left: -50%;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 200;
   opacity: 0;
-  transition: opacity .2s; }
+  transition: all .2s; }
 
 .nav-mobile__list {
   list-style: none;
   text-align: center; }
 
 .nav-mobile__item:not(:last-child) {
-  margin-bottom: 2.5rem; }
+  margin-bottom: 5rem; }
 
 .nav-mobile__link {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   color: var(--color-white);
   text-decoration: none; }
   .nav-mobile__link--active {

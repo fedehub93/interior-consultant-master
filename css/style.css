@@ -118,6 +118,7 @@ body {
   transform: rotate(230deg); }
 
 .header__checkbox:checked ~ .nav-mobile .nav-mobile__background {
+  width: 100vw;
   opacity: 1; }
 
 .header__checkbox:checked ~ .nav-mobile .nav-mobile__nav {
@@ -147,13 +148,13 @@ body {
 .nav-mobile__background {
   position: fixed;
   height: 100vh;
-  width: 100vw;
+  width: 0;
   left: 0;
   top: 0;
   background-color: var(--color-black);
   opacity: 0;
   z-index: 100;
-  transition: all 0.2s cubic-bezier(0, 1.08, 0.78, 0.88); }
+  transition: all 0.5s cubic-bezier(0, 1.08, 0.78, 0.88); }
 
 .nav-mobile__nav {
   position: fixed;

@@ -34,7 +34,7 @@
 
 ## Overview
 
-![screenshot](https://fedehub93.github.io/404-page-not-found/preview.png)
+![screenshot](https://fedehub93.github.io/interior-consultant-master/preview.png)
 
 ### Built With
 
